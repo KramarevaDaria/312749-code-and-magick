@@ -30,8 +30,8 @@ window.renderStatistics = function (ctx, names, times) {
   ctx.fillText('Список результатов:', 120, 60);
 
   var max = -1;
-  for (var i = 0 ; i < times.length; i++) {
-    var time = times[i];
+  for (var j = 0; j < times.length; j++) {
+    var time = times[j];
     if (time > max) {
       max = time;
     }
@@ -49,8 +49,7 @@ window.renderStatistics = function (ctx, names, times) {
   for (var i = 0; i < times.length; i++) {
     if (names[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
-    }
-    else {
+    } else {
       ctx.fillStyle = 'rgba(0, 0, 255, 1)';
     }
 
