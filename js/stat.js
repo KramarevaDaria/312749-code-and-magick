@@ -50,11 +50,13 @@ window.renderStatistics = function (ctx, names, times) {
     if (names[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
-      ctx.fillStyle = 'rgba(0, 0, 255, 1)';
+      ctx.fillStyle = 'rgba(0, 0, 255, ' + Math.random() +')';
     }
 
+    ctx.fillRect(initialX + indent * i + barWidth * i, initialY + barHeight - times[i] * step, barWidth, times[i] * step);
+
+    ctx.fillStyle = 'rgba(0, 0, 0, 1)';
     ctx.fillText(names[i], initialX + indent * i + barWidth * i, yForName);
     ctx.fillText(Math.round(times[i]), initialX + indent * i + barWidth * i, initialY - lineHeight);
-    ctx.fillRect(initialX + indent * i + barWidth * i, initialY + barHeight - times[i] * step, barWidth, times[i] * step);
   }
 };
